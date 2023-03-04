@@ -7,8 +7,9 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
+import FeatureCard from './FeatureCard';
 
-const Features = ({title}: {title: string}) => {
+const Features = ({data}: {data: any}) => {
   const categories = ['rings', 'necklace', 'bracelets', 'wedding'];
 
   return (
@@ -21,7 +22,7 @@ const Features = ({title}: {title: string}) => {
             fontSize: 26,
             flex: 1,
           }}>
-          {title}
+          {data.type}
         </Text>
         <TouchableOpacity style={{alignSelf: 'center'}}>
           <Text
@@ -36,26 +37,8 @@ const Features = ({title}: {title: string}) => {
         </TouchableOpacity>
       </View>
       <ScrollView horizontal={true}>
-        {categories.map(category => (
-          <View style={styles.categoryContainer}>
-            <Text
-              style={{
-                fontWeight: '400',
-                textTransform: 'capitalize',
-                fontSize: 16,
-                marginVertical: 5,
-              }}>
-              Rings
-            </Text>
-            <TouchableOpacity>
-              <Image
-                style={styles.imageContainer}
-                source={{
-                  uri: 'https://static.mejuri.com/legacy-front/production/system/spree/products/10249/original/2019-12-09_PDP_Erin_Herringbone_Chains___Plain_Rings-0312-Edit-2.jpg',
-                }}
-              />
-            </TouchableOpacity>
-          </View>
+        {data.items.map((item: {title: string; image: string}) => (
+          <FeatureCard {...item} />
         ))}
       </ScrollView>
     </View>
@@ -74,12 +57,5 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     marginBottom: 8,
-  },
-  categoryContainer: {
-    marginRight: 20,
-  },
-  imageContainer: {
-    height: 250,
-    width: 250,
   },
 });
