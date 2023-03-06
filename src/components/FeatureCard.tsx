@@ -1,7 +1,11 @@
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import React from 'react';
+import {Jewel} from '../models/Jewel';
+import {useNavigation} from '@react-navigation/native';
 
-const FeatureCard = ({title, image}: {title: string; image: string}) => {
+const FeatureCard = (item: Jewel) => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.categoryContainer}>
       <Text
@@ -12,13 +16,14 @@ const FeatureCard = ({title, image}: {title: string; image: string}) => {
           fontSize: 16,
           marginVertical: 5,
         }}>
-        {title}
+        {item.name}
       </Text>
+      {/* <TouchableOpacity onPress={() => navigation.navigate('Category', { ...item})}> */}
       <TouchableOpacity>
         <Image
           style={styles.imageContainer}
           source={{
-            uri: image,
+            uri: item.images[0],
           }}
         />
       </TouchableOpacity>

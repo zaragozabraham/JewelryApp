@@ -1,14 +1,11 @@
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import React from 'react';
-import {BellIcon, MagnifyingGlassIcon} from 'react-native-heroicons/outline';
+import {MagnifyingGlassIcon} from 'react-native-heroicons/outline';
 
 const Header = () => {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.brandName}>GOLDEN HOUR</Text>
-      <TouchableOpacity>
-        <BellIcon style={styles.icon} color="black" />
-      </TouchableOpacity>
       <TouchableOpacity>
         <MagnifyingGlassIcon style={styles.icon} color="black" />
       </TouchableOpacity>

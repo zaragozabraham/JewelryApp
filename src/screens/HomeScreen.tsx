@@ -7,7 +7,7 @@ import {categories, bestSellers} from './data';
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <ScrollView>
         <Header />
         <Jumbotron />

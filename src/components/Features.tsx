@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import FeatureCard from './FeatureCard';
+import {Jewel} from '../models/Jewel';
 
 const Features = ({data}: {data: any}) => {
   const categories = ['rings', 'necklace', 'bracelets', 'wedding'];
@@ -37,8 +38,8 @@ const Features = ({data}: {data: any}) => {
         </TouchableOpacity>
       </View>
       <ScrollView horizontal={true}>
-        {data.items.map((item: {title: string; image: string}) => (
-          <FeatureCard {...item} />
+        {data.items.map((item: Jewel) => (
+          <FeatureCard {...item} key={item.id} />
         ))}
       </ScrollView>
     </View>
