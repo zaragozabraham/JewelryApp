@@ -4,7 +4,7 @@ const braceletSizes = [];
 export const categories = [
   {
     id: '1',
-    name: 'rings',
+    name: 'ring',
     image:
       'https://static.mejuri.com/legacy-front/production/system/spree/products/10249/original/2019-12-09_PDP_Erin_Herringbone_Chains___Plain_Rings-0312-Edit-2.jpg',
   },
@@ -16,7 +16,7 @@ export const categories = [
   },
   {
     id: '3',
-    name: 'bracelets',
+    name: 'bracelet',
     image:
       'https://static.mejuri.com/legacy-front/production/system/spree/products/21512/original/Bangle_bracelet_v_rich_hero_028.jpg',
   },

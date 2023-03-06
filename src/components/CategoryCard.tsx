@@ -1,8 +1,17 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Category} from '../models/Category';
+import {
+  NavigationProp,
+  ParamListBase,
+  useNavigation,
+} from '@react-navigation/native';
+
+type homeScreenProp = NavigationProp<ParamListBase, 'Category'>;
 
 const CategoryCard = (category: Category) => {
+  const navigation = useNavigation<homeScreenProp>();
+
   return (
     <View style={styles.categoryContainer}>
       <Text
@@ -15,8 +24,10 @@ const CategoryCard = (category: Category) => {
         }}>
         {category.name}
       </Text>
-      {/* <TouchableOpacity onPress={() => navigation.navigate('Category', { ...category})}> */}
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('Category', {category: category.name})
+        }>
         <Image
           style={styles.imageContainer}
           source={{
