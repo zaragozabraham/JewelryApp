@@ -1,6 +1,7 @@
-const ringSizes = [];
-const necklaceSizes = [];
-const braceletSizes = [];
+const ringSizes = [4, 5, 6, 7, 8, 9];
+const necklaceSizes = [16, 18, 24];
+const braceletSizes = [6.65, 7, 7.5, 8, 8.65];
+
 export const categories = [
   {
     id: '1',

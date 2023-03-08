@@ -2,12 +2,9 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Category} from '../models/Category';
 import {
-  NavigationProp,
-  ParamListBase,
   useNavigation,
 } from '@react-navigation/native';
-
-type homeScreenProp = NavigationProp<ParamListBase, 'Category'>;
+import { homeScreenProp } from '../navigations/types';
 
 const CategoryCard = (category: Category) => {
   const navigation = useNavigation<homeScreenProp>();

@@ -1,11 +1,18 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {Jewel} from '../models/Jewel';
+import {
+  useNavigation,
+} from '@react-navigation/native';
+import { homeScreenProp } from '../navigations/types';
+
 
 const BestSellerCard = (jewel: Jewel) => {
+  const navigation = useNavigation<homeScreenProp>();
+
   return (
     <View style={styles.cardContainer}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('ProductDetail', {product: jewel})}>
         <Image
           style={styles.imageContainer}
           source={{
