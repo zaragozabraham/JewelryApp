@@ -3,9 +3,10 @@ import React, {useEffect, useState} from 'react';
 import {useSelector} from 'react-redux';
 import {categoriesSelector} from '../features/jewels/jewelrySlice';
 
-const CategorySelector = ({selected}: {selected?: string}) => {
+const CategorySelector = (props: any) => {
   const [selectedCategory, setSelectedCategory] = useState<string>();
   const categoriesState = useSelector(categoriesSelector);
+  const {selected, onSelectFilter} = props;
 
   useEffect(() => {
     if (selected && selectedCategory != '') {
@@ -13,9 +14,14 @@ const CategorySelector = ({selected}: {selected?: string}) => {
     }
   }, []);
 
+  const handleSelect = (category: string) => {
+    setSelectedCategory(category);
+    onSelectFilter(category);
+  };
+
   const buttons = categoriesState.map(category => (
     <TouchableOpacity
-      onPress={() => setSelectedCategory(category.name)}
+      onPress={() => handleSelect(category.name)}
       style={[
         styles.categoryButton,
         {
