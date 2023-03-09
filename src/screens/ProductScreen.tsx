@@ -45,6 +45,7 @@ const ProductScreen = ({route, navigation}: {route: any; navigation: any}) => {
           <View style={styles.sizeSelectorContainer}>
             {product.sizes.map((size: number) => (
               <TouchableOpacity
+                key={size}
                 style={[
                   {
                     backgroundColor:

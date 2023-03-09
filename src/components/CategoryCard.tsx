@@ -23,7 +23,7 @@ const CategoryCard = (category: Category) => {
       </Text>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate('Category', {category: category.name})
+          navigation.navigate('Catalog', {queryFilter: category.name})
         }>
         <Image
           style={styles.imageContainer}

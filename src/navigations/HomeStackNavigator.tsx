@@ -1,5 +1,5 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import CategoryScreen from '../screens/CategoryScreen';
+import CatalogScreen from '../screens/CatalogScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProductScreen from '../screens/ProductScreen';
 
@@ -12,7 +12,7 @@ const HomeStackNavigator = () => {
         headerShown: false,
       })}>
       <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Category" component={CategoryScreen} />
+      <HomeStack.Screen name="Catalog" component={CatalogScreen} />
       <HomeStack.Screen name="ProductDetail" component={ProductScreen} />
     </HomeStack.Navigator>
   );

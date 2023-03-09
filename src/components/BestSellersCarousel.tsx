@@ -1,13 +1,13 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
 import React from 'react';
-import CarrouselHeader from './CarrouselHeader';
+import CarouselHeader from './CarouselHeader';
 import {Jewel} from '../models/Jewel';
 import BestSellerCard from './BestSellerCard';
 
-const BestSellersCarrousel = ({jewels}: {jewels: Jewel[]}) => {
+const BestSellersCarousel = ({jewels}: {jewels: Jewel[]}) => {
   return (
     <View style={styles.carrouselContainer}>
-      <CarrouselHeader title="best sellers" />
+      <CarouselHeader title="best sellers" filter='best sellers' />
       <ScrollView horizontal={true}>
         {jewels.map((jewel: Jewel) => (
           <BestSellerCard {...jewel} key={jewel.id} />
@@ -17,7 +17,7 @@ const BestSellersCarrousel = ({jewels}: {jewels: Jewel[]}) => {
   );
 };
 
-export default BestSellersCarrousel;
+export default BestSellersCarousel;
 
 const styles = StyleSheet.create({
   carrouselContainer: {

@@ -1,13 +1,13 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
 import React from 'react';
-import CarrouselHeader from './CarrouselHeader';
+import CarouselHeader from './CarouselHeader';
 import {Category} from '../models/Category';
 import CategoryCard from './CategoryCard';
 
-const CategoriesCarrousel = ({categories}: {categories: Category[]}) => {
+const CategoriesCarousel = ({categories}: {categories: Category[]}) => {
   return (
     <View style={styles.carrouselContainer}>
-      <CarrouselHeader title="Categories" />
+      <CarouselHeader title="Categories" />
       <ScrollView horizontal={true}>
         {categories.map((category: Category) => (
           <CategoryCard {...category} key={category.id} />
@@ -17,7 +17,7 @@ const CategoriesCarrousel = ({categories}: {categories: Category[]}) => {
   );
 };
 
-export default CategoriesCarrousel;
+export default CategoriesCarousel;
 
 const styles = StyleSheet.create({
   carrouselContainer: {

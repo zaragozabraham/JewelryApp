@@ -37,7 +37,6 @@ export const jewelrySelector = (state: RootState) => state.jewelry;
 export const categoriesSelector = (state: RootState) => jewelrySelector(state).categories;
 export const jewelsSelector = (state: RootState) => jewelrySelector(state).jewels;
 export const bestSellersSelector = (state: RootState) => jewelrySelector(state).bestSellers;
-// change bestSellersSelector to jewelsSelector
-export const typeSelector = (state: RootState, type: string) => bestSellersSelector(state).filter((jewel) => jewel.type === type);
+export const typeSelector = (state: RootState, type: string) => jewelsSelector(state).filter((jewel) => jewel.type === type);
 
 export default JewelrySlice.reducer;
